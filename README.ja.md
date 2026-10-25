@@ -48,13 +48,13 @@ flowchart LR
 
 ## インストール
 
-<!-- TODO: 外部サイトのインストールガイドへのリンクに置き換える -->
-_プレースホルダー: インストールガイドへのリンク_
+Clindroid Buddy は、安全のために Docker コンテナの中で動かします。Clindroid Buddy があなたに代わって実行するシェルコマンドや R プログラムが触れられる範囲を、コンテナで限定するためです（詳しくは「[Docker で実行する](#docker-で実行する)」をご覧ください）。
+
+イメージの取得、環境変数の設定、`compose.yaml` の用意、試験フォルダへの設定ファイルの配置は、ユーザーガイドの [1. はじめに](https://clindroid.com/jp/products/buddy/docs/getting-started#11-前提) の 1.1〜1.5 に沿って進めてください。macOS と Windows のそれぞれについて説明しています。
 
 ## クイックスタート
 
-<!-- TODO: 外部サイトのクイックスタートガイドへのリンクに置き換える -->
-_プレースホルダー: クイックスタートガイドへのリンク_
+[1.6 起動する](https://clindroid.com/jp/products/buddy/docs/getting-started#16-起動する) に沿って Clindroid Buddy を起動し、[1.7 動作確認](https://clindroid.com/jp/products/buddy/docs/getting-started#17-動作確認) でセットアップを確かめてください。最初のセッションで使うキー操作は [1.8 TUI の基本操作](https://clindroid.com/jp/products/buddy/docs/getting-started#18-tui-の基本操作) にまとめています。
 
 ## Docker で実行する
 

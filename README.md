@@ -72,13 +72,19 @@ flowchart LR
 
 ## Installation
 
-<!-- TODO: replace with a link to the installation guide on the external site -->
-_Placeholder: link to the installation guide._
+For safety, Clindroid Buddy runs in a Docker container. The container limits what the shell
+commands and R programs it runs on your behalf can reach (see [Running in Docker](#running-in-docker)).
+
+To get the image, set the environment variables, prepare
+`compose.yaml` and put a config file in the study folder, follow sections 1.1 to 1.5 of
+[1. Getting Started](https://clindroid.com/products/buddy/docs/getting-started#11-prerequisites) in the user guide. It covers macOS and Windows.
 
 ## Quick start
 
-<!-- TODO: replace with a link to the quick start guide on the external site -->
-_Placeholder: link to the quick start guide._
+Start Clindroid Buddy as described in [1.6 Launching](https://clindroid.com/products/buddy/docs/getting-started#16-launching), then confirm the
+setup with [1.7 Checking that it works](https://clindroid.com/products/buddy/docs/getting-started#17-checking-that-it-works).
+[1.8 Basic TUI controls](https://clindroid.com/products/buddy/docs/getting-started#18-basic-tui-controls) covers the keys you need for your first
+session.
 
 ## Running in Docker
 
