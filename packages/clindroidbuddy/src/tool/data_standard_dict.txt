@@ -1,0 +1,17 @@
+Downloads a CDISC Controlled Terminology package from NCI's EVS server and saves it locally.
+
+Usage:
+- `std`: one of `sdtm`, `adam`, `define`
+- `version`: the terminology package version, as a date in yyyy-mm-dd format (e.g. 2026-03-27)
+- Files are saved to the `dict/` directory under the project root
+- The file name follows the pattern: `{std} Terminology {version}.txt`
+
+This is a raw Controlled Terminology download, separate from and not a substitute for the
+CDISC Standards Versions table in the project's `AGENTS.md` — use it to fetch the actual codelist
+content for a package version already declared there (`sdtm-terminology` / `adam-terminology` /
+`define-xml-terminology`), or to inspect a candidate version before declaring it.
+
+Notes:
+- The `dict/` directory is created automatically if it does not exist
+- HTTP errors (e.g., 404) are reported with status code and message
+- Network failures propagate the original error

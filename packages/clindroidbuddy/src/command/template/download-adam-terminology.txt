@@ -1,0 +1,35 @@
+Download the ADaM Controlled Terminology package for this project using the `download_terminology` tool in ADaM mode (`std: "adam"`).
+
+---
+
+Input: $ARGUMENTS
+
+---
+
+## Determining the Package Version
+
+The `download_terminology` tool requires an exact package version, given as a date in yyyy-mm-dd
+format (e.g. `2024-06-28`) — never "latest".
+
+1. **Input is a valid yyyy-mm-dd date**: Use it directly as the version — this is an explicit
+   override, so proceed straight to downloading without checking `AGENTS.md`.
+2. **Otherwise** (input is empty, or present but not a valid yyyy-mm-dd date): Read `AGENTS.md`
+   and locate its **CDISC Standards Versions** table.
+   - **If the table exists and its `adam` column's `adam-terminology` cell lists one or more
+     package versions**: Those are the project's declared ADaM Controlled Terminology package
+     version(s) — download each listed version directly, without asking the user for confirmation.
+   - **If `AGENTS.md` has no such table, or the `adam-terminology` cell is missing or empty**: The
+     version is unknown — ask the user which ADaM Controlled Terminology package version/date to
+     download. Do not guess or assume "the latest".
+
+## Downloading
+
+Call the `download_terminology` tool with `std: "adam"` for each resolved `version`.
+
+## After Downloading
+
+- If a downloaded version came directly from AGENTS.md's CDISC Standards Versions table
+  (`adam.adam-terminology`), no further action is needed — it is already declared there.
+- If a downloaded version came from `$ARGUMENTS` or the user's answer (i.e. it was not already in
+  that cell), ask the user whether to add it to AGENTS.md's CDISC Standards Versions table — do not
+  edit it unprompted.

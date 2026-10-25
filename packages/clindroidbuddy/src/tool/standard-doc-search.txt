@@ -1,0 +1,39 @@
+Indexes and semantically searches the project's local CDISC standard Implementation Guide (IG)
+source documents (PDF or DOCX) — currently ADaM and SDTM — so skills like adam-spec-creator can
+cite the actual standard text instead of relying on trained-in knowledge alone.
+
+Source documents live under docs/standards/<standard>/ (relative to the project root, where
+<standard> is "adam" or "sdtm") as .pdf or .docx files. This tool never downloads or fetches these
+documents itself — the user places them. Each standard's documents are indexed and searched
+independently — a "sdtm" search never returns "adam" chunks and vice versa.
+
+Every call takes a `standard` parameter ("adam" or "sdtm") in addition to `action`:
+
+Actions:
+- "index": Scans docs/standards/<standard>/ for .pdf/.docx files, extracts their text, splits it
+  into overlapping chunks, embeds each chunk with the configured embedding model, and stores the
+  result. Unchanged files (by content hash) are skipped; changed files are fully re-indexed; files
+  removed from disk are dropped from the index. Must be run at least once per standard before
+  "search" will return anything for that standard — it does not run implicitly.
+- "search": Given a natural-language `query` (e.g. a variable name plus IG version, such as
+  "AESEV Core designation ADaM IG 1.3" or "DM domain USUBJID SDTM IG 3.4"), returns the `topK` most
+  semantically similar chunks for that standard, each with its source file name, page/section
+  location, similarity score, and excerpt text — so the caller can cite "source file, page/section"
+  as the basis for a derivation or Core designation. Fails with a clear message if nothing has been
+  indexed yet for that standard (run "index" for that standard first).
+- "status": Lists indexed documents for this project and standard with their chunk counts and the
+  embedding provider/model used, so a caller can check whether the currently declared IG version's
+  document is actually indexed before relying on search results.
+
+Requires `rag.embeddingModel` to be set in the project config (e.g. clindroidbuddy.json) to a
+"<providerID>/<modelID>" pair pointing at an embedding-capable model on an already-configured
+provider (e.g. a local Ollama server via an openai-compatible provider, model "nomic-embed-text";
+or the bundled `clindroidbuddy/llamacpp-embedding` provider, which auto-starts and manages a
+user-installed `llama-server` (llama.cpp) as a child process — see THIRD_PARTY_NOTICES.md). If
+unset, "index" and "search" fail with instructions on how to configure it — this tool never
+guesses or falls back to a default embedding model. The same embedding model is shared across both
+standards.
+
+If a search returns no relevant hits, or nothing is indexed at all for that standard, fall back to
+standard IG convention knowledge as usual and note in the output that the IG document itself could
+not confirm it — do not treat an empty/failed search as evidence the fact is false.

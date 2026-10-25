@@ -1,0 +1,13 @@
+.git
+.DS_Store
+**/node_modules
+**/dist
+**/.turbo
+**/tsconfig.tsbuildinfo
+.clindroidbuddy
+dev_memo
+dev_tool
+opencode-session
+resources
+install
+docs

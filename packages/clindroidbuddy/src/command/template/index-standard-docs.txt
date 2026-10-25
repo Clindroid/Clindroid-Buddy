@@ -1,0 +1,34 @@
+Build or refresh the local semantic search index for ADaM/SDTM Implementation Guide documents using
+the `standard_doc_search` tool's `action: "index"`.
+
+---
+
+Input: $ARGUMENTS
+
+---
+
+## Determining Which Standard(s) to Index
+
+1. **Input is "adam" or "sdtm"** (case-insensitive): Index only that standard.
+2. **Input is empty**: Index both "adam" and "sdtm".
+3. **Otherwise**: The input is not a recognized standard — ask the user whether they meant "adam",
+   "sdtm", or both. Do not guess.
+
+## Indexing
+
+For each resolved standard, call the `standard_doc_search` tool with `action: "index"` and
+`standard: "<standard>"`.
+
+## After Indexing
+
+Report the outcome for each standard based on the tool's output:
+
+- **Indexed / unchanged / removed files**: Summarize per-file status and chunk counts as returned by
+  the tool.
+- **No .pdf/.docx files found**: Tell the user to place the standard's IG source documents under
+  `docs/standards/<standard>/` and rerun this command.
+- **`rag.embeddingModel` is not configured**: Tell the user to add an embedding model id to a
+  provider already declared under `provider` in clindroidbuddy.json (e.g. Ollama's
+  `nomic-embed-text` over HTTP, or the `clindroidbuddy/llamacpp-embedding` bundled provider, which
+  auto-starts a user-installed `llama-server` as a child process), then set `rag.embeddingModel` to
+  `"<providerID>/<modelID>"` and rerun this command.
