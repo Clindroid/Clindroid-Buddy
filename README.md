@@ -14,10 +14,7 @@ and renders the table to RTF.
 It runs against a local LLM if you want it to, so subject-level data never has to leave your
 own infrastructure.
 
-<!-- TODO: replace the placeholder line below with the user-attachments URL of
-clindroid_buddy_demo_30s.mp4. Drag the file into a GitHub issue or PR comment to get the URL,
-then put the bare URL on its own line so GitHub renders it as a video player. -->
-_Placeholder: 30-second demo video._
+https://github.com/user-attachments/assets/e6f1e3dc-fddc-4251-b0c8-10a12c7b07d5
 
 Watch the [full 12-minute demo with narration on YouTube](https://youtu.be/Cd9Yi2Ne98E).
 

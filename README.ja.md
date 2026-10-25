@@ -10,10 +10,7 @@ Clindroid Buddy は、治験の総括報告書に載せる図表を作成する�
 
 LLM はローカルでも動かせるので、被験者レベルのデータを自社のインフラの外に出す必要はありません。
 
-<!-- TODO: 下のプレースホルダーの行を、clindroid_buddy_demo_30s.mp4 の user-attachments URL に置き換える。
-GitHub の Issue か PR のコメント欄にファイルをドラッグすると URL が得られる。
-URL だけを 1 行に置くと、GitHub が動画プレーヤーとして表示する。 -->
-_プレースホルダー: 30 秒のデモ動画_
+https://github.com/user-attachments/assets/e6f1e3dc-fddc-4251-b0c8-10a12c7b07d5
 
 ナレーション付きの [12 分のデモ動画全編は YouTube でご覧いただけます](https://youtu.be/Cd9Yi2Ne98E)。
 
