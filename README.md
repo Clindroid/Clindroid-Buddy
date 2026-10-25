@@ -75,8 +75,16 @@ flowchart LR
 For safety, Clindroid Buddy runs in a Docker container. The container limits what the shell
 commands and R programs it runs on your behalf can reach (see [Running in Docker](#running-in-docker)).
 
-To get the image, set the environment variables, prepare
-`compose.yaml` and put a config file in the study folder, follow sections 1.1 to 1.5 of
+The image is published on Docker Hub as
+[`clindroid/clindroidbuddy`](https://hub.docker.com/r/clindroid/clindroidbuddy). Pull it with the
+version tag:
+
+```bash
+docker pull clindroid/clindroidbuddy:0.1.0
+```
+
+To set the environment variables, prepare `compose.yaml` and put a config file in the study
+folder, follow sections 1.1 to 1.5 of
 [1. Getting Started](https://clindroid.com/products/buddy/docs/getting-started#11-prerequisites) in the user guide. It covers macOS and Windows.
 
 ## Quick start
