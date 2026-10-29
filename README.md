@@ -76,11 +76,11 @@ For safety, Clindroid Buddy runs in a Docker container. The container limits wha
 commands and R programs it runs on your behalf can reach (see [Running in Docker](#running-in-docker)).
 
 The image is published on Docker Hub as
-[`clindroid/clindroidbuddy`](https://hub.docker.com/r/clindroid/clindroidbuddy). Pull it with the
-version tag:
+[`clindroid/clindroidbuddy`](https://hub.docker.com/r/clindroid/clindroidbuddy). Pull the latest
+version with the `latest` tag:
 
 ```bash
-docker pull clindroid/clindroidbuddy:0.1.0
+docker pull clindroid/clindroidbuddy:latest
 ```
 
 To set the environment variables, prepare `compose.yaml` and put a config file in the study

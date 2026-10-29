@@ -50,10 +50,10 @@ flowchart LR
 
 Clindroid Buddy は、安全のために Docker コンテナの中で動かします。Clindroid Buddy があなたに代わって実行するシェルコマンドや R プログラムが触れられる範囲を、コンテナで限定するためです（詳しくは「[Docker で実行する](#docker-で実行する)」をご覧ください）。
 
-イメージは Docker Hub で [`clindroid/clindroidbuddy`](https://hub.docker.com/r/clindroid/clindroidbuddy) として公開しています。バージョンのタグを付けて取得してください。
+イメージは Docker Hub で [`clindroid/clindroidbuddy`](https://hub.docker.com/r/clindroid/clindroidbuddy) として公開しています。最新版は `latest` タグで取得できます。
 
 ```bash
-docker pull clindroid/clindroidbuddy:0.1.0
+docker pull clindroid/clindroidbuddy:latest
 ```
 
 環境変数の設定、`compose.yaml` の用意、試験フォルダへの設定ファイルの配置は、ユーザーガイドの [1. はじめに](https://clindroid.com/jp/products/buddy/docs/getting-started#11-前提) の 1.1〜1.5 に沿って進めてください。macOS と Windows のそれぞれについて説明しています。
